@@ -12,8 +12,12 @@ To build this service seperatly from docker-compose,
 
 run on current directory:
 
-` sudo docker build -t users-svc-im ./users-svc/ `
-` sudo docker run -d --name users-svc -p 5858:5858 users-svc-im `
+```
+$ sudo docker build -t users-svc-im ./users-svc/ 
+```
+```
+$ sudo docker run -d --name users-svc -p 5858:5858 users-svc-im 
+```
 
 
 ## API
@@ -21,14 +25,18 @@ run on current directory:
 ### HTTP methods:
 
 
-`GET  /details`
-`GET  /details/:id`
-`PUT  /details`
-`DEL  /details/:id`
-`POST /details`
+```
+GET  /details
+GET  /details/:id
+PUT  /details
+DEL  /details/:id
+POST /details
+```
 
-`GET  /permissions`
-`GET  /permissions/:id`
-`PUT  /permissions`
-`DEL  /permissions/:id`
-`POST /permissions`
+```
+GET  /permissions
+GET  /permissions/:id
+PUT  /permissions
+DEL  /permissions/:id
+POST /permissions
+```
