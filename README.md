@@ -6,7 +6,9 @@ This web app are for study purposes
 ---
 ## Build:
 
-Admin credentials are set to username:`zin` password:`1234`
+Admin credentials are set to: <br/>
+username: `zin`  <br/>
+password: `1234` <br/>
 
 #### Prerequisites:
     - docker
