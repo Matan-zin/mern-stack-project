@@ -4,24 +4,28 @@
 This web app are for study purposes
 
 ---
-## Build
+## Build:
 
-Admin credietials are set to `zin` `1234`
+Admin credentials are set to username:`zin` password:`1234`
 
-### Prerequisites:
+#### Prerequisites:
     - docker
     - docker-comopse
     - node
-    - yarn / npm
 
-### Installation:
-    - verify docker.socket are active
-    `sudo systemctl status docker.socket`
-    - navigate to docker-compose directory
-    `cd docker-compose && sudo docker-comopose up --build`
-    - navigate to localhost on your browser
+#### Installation:
+
+verify docker.socket are active
+```
+sudo systemctl status docker.socket
+```
+navigate to docker-compose directory 
+```
+cd docker-compose && sudo docker-comopose up --build
+```
+navigate to localhost on your browser
+
 ---
-
 ## App Design:
  
 ![Plan](./Plan.png)
