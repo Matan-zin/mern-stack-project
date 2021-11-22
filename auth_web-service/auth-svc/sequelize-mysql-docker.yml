@@ -1,0 +1,7 @@
+dbname: auth-webservice
+username: auth-webservice
+password: auth-webservice
+params:
+    host: auth-db
+    port: 3306
+    dialect: mysql

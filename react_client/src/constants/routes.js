@@ -1,0 +1,15 @@
+export const LOGIN          = '/login';
+export const SIGN_UP        = '/sign-up';
+export const DASHBOARD      = '/';
+export const NOT_FOUND      = '/not-found';
+export const MOVIES         = '/movies';
+export const SUBSCRIPTIONS  = '/subscriptions';
+export const USERS_MANGMENT = '/users-managment';
+export const ALL_USERS      = '/all-users';
+export const ADD_USER       = '/add-user';
+export const EDIT_USER      = '/edit-user';
+export const ALL_MEMBERS    = '/all-members';
+export const ADD_MEMBER     = '/add-member';
+export const EDIT_MEMBER    = '/edit-member';
+export const ADD_MOVIE      = '/add-movie';
+export const EDIT_MOVIE     = '/edit-movie';

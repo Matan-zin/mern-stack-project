@@ -1,0 +1,102 @@
+version: '3'
+
+services:
+
+  auth-db:
+    build: ../auth_web-service/auth-db
+    container_name: auth-db
+    networks:
+      - authnet
+    volumes:
+      - auth-db-data:/var/lib/mysql
+    restart: unless-stopped
+  
+  
+
+  auth-svc:
+    build: ../auth_web-service/auth-svc
+    container_name: auth-svc
+    depends_on:
+      - auth-db
+    networks:
+      - authnet
+      - cinemanet
+    restart: unless-stopped
+
+  
+
+  subs-db:
+    build: ../subscription_web-service/subs-db
+    container_name: subs-db
+    networks:
+      - subsnet
+    volumes:
+      - subs-db-data:/data/db
+    restart: unless-stopped
+  
+
+  
+  subs-svc:
+    build: ../subscription_web-service/subs-svc
+    container_name: subs-svc
+    depends_on:
+      - subs-db
+    networks:
+      - subsnet
+      - cinemanet
+    restart: unless-stopped
+
+  
+  
+  users-svc:
+    build: ../users_web-service/users-svc
+    container_name: users-svc
+    networks:
+      - cinemanet
+    restart: unless-stopped
+
+  
+  
+  cinema-svc:
+    build: ../cinema_web-service/
+    container_name: cinema-svc
+    depends_on:
+      - auth-svc
+      - subs-svc
+      - users-svc
+    networks:
+      cinemanet:  
+      frontnet:
+        ipv4_address: '172.25.0.20'
+    restart: unless-stopped
+  
+
+  react-client:
+    build: ../react_client
+    container_name: react-client
+    depends_on:
+      - cinema-svc
+    networks:
+      - frontnet
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+  
+networks:
+  frontnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/24
+  cinemanet:
+    driver: bridge
+  authnet:
+    driver: bridge
+  subsnet:
+    driver: bridge
+
+
+volumes:
+  auth-db-data:
+  subs-db-data:

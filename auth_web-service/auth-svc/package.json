@@ -1,0 +1,25 @@
+{
+  "name": "auth-svc",
+  "version": "0.0.1",
+  "description": "Authentication Web Service",
+  "main": "app.mjs",
+  "scripts": {
+    "start": "DEBUG=auth-svc:* PORT=5050 ADMIN_ID=017ed254-d960-4e10-9abe-83751f00e042 ADMIN_NAME=zin ADMIN_PSW=12345 SEQUELIZE_CONNECT=sequelize-mysql-local.yml node ./app.mjs",
+    "test": "node ./test/auth.test.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "commander": "^8.2.0",
+    "js-yaml": "^4.1.0",
+    "mysql2": "^2.3.2",
+    "restify": "^8.6.0",
+    "restify-clients": "^3.1.0",
+    "sequelize": "^6.7.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.4"
+  }
+}

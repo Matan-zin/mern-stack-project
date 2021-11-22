@@ -1,0 +1,25 @@
+.user-form input[type="checkbox"] {
+  width: 20%;
+  margin-left: auto;
+}
+.user-form input {
+    float: right;
+}
+.user-form label {
+    float: left;
+    width: 60%;
+}
+.user-form > * {
+    margin: .1em 0;
+}
+.permission-div {
+    margin: .4em 0;
+}
+.user-card li span {
+    text-decoration: underline;
+    font-weight: 900;
+    margin-right: .8em;
+}
+.user-card li { 
+    margin: .2em 0;
+}

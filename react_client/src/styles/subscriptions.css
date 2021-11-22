@@ -1,0 +1,10 @@
+.sub-to-new {
+    display: flex;
+    flex-direction: column;
+}
+.sub-to-new button {
+    width: 30%;
+}
+.sub-to-new > * {
+    margin: .1em;
+}

@@ -1,0 +1,14 @@
+
+.movie-card > * {
+    margin-bottom: .3em;
+}
+.movie-card p {
+    margin: .2em 0 .4em 0;
+}
+.sub-watch {
+    display: flex;
+    flex-direction: column;
+}
+.movie-card {
+    align-items: center;
+}

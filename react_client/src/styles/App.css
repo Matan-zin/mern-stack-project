@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+  --text-color-bg-1: white;
+  --text-color-bg-2: black;
+  --background-color-1: black;
+  --background-color-2: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: var(--text-color-bg-2);
+  background-color: var(--background-color-2);
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  padding: .1em 1.5em;
+  border-radius: 8px;
+  color: var(--text-color-bg-1);
+  background-color: var(--background-color-1);
+}
+
+/**
+* General properties for all pages
+*/
+
+[class*="page"] {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 4em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+[class*="head"] > * {
+  margin: .3em;
+}
+
+[class*="head"] button {
+  border-radius: unset;
+  padding: .4em;
+  font-weight: bolder;
+}
+[class*="head"] button:hover,
+[class*="head"] button:active {
+  border-radius: 8px;
+}
+
+[class*="card"], [class*="form"] {
+  width: 320px;
+  margin-top: 1.5em;
+  padding: 1.2em;
+  border: 1px solid var(--background-color-1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="card"] ul {
+  list-style: none;
+}
+
+[class*="btns"] {
+  margin: .8em .5em .2em 0em;
+}
+[class*="btns"] button {
+  margin-right: .3em;
+}

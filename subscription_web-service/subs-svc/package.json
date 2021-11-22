@@ -1,0 +1,20 @@
+{
+  "name": "sub-svc",
+  "version": "0.0.1",
+  "description": "REST-API, for subscriptions web service",
+  "main": "app.mjs",
+  "scripts": {
+    "start": "DEBUG=* DB_URL=0.0.0.0 DB_PORT=27017 node ./app.mjs",
+    "test": "DB_URL=0.0.0.0 DB_PORT=27017 node ./test/index.test.mjs"
+  },
+  "author": "Matan-zin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "mongoose": "^6.0.11",
+    "restify": "^8.6.0"
+  },
+  "devDependencies": {
+    "supertest": "^6.1.6"
+  }
+}

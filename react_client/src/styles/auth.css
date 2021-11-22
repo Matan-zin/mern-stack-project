@@ -1,0 +1,68 @@
+.auth-p {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--auth-page-color);
+    box-shadow: 1px 1px 20px 1px var(--auth-page-shdow);
+    font-size: 1.2em;
+}
+.auth-c { 
+    border-radius: 2px; 
+}
+.logo-auth { 
+    width: 200px;
+}
+.authentication-f { 
+    margin: 2em 0;
+}
+.auth-c input {
+    border: 1px solid black;
+    padding: .4rem;
+}
+[role='log'] {
+    color: rgb(151, 33, 33);
+    font-size: x-small;
+}
+.auth-c form button {
+    margin-top: .2em;
+    font-size: small;
+} 
+
+
+@media (max-width: 611px) {
+    .auth-c {
+        width: 60%;
+        height: 50%;
+        padding: 1.2em;
+    }
+    .logo-auth {
+        width: 200px;
+        margin-left: 20%;
+    }
+    .new-user { font-size: small;}
+}
+
+@media (min-width: 612px) and (max-width: 1200px) {
+    .auth-c {
+        width: 60%;
+        height: 50%;
+        padding: 1.2em;
+        display: flex;
+        flex-direction: column;
+        margin-top: -6em;
+    }
+
+    .auth-p { flex-direction: row-reverse; }
+    .new-user { font-size: small;}
+
+    .logo-auth {
+        margin-top: -8em; 
+        margin-right: -1em;
+    }
+
+    .authentication-f { width: 200px;}
+  
+}

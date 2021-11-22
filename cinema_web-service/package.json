@@ -1,0 +1,25 @@
+{
+  "name": "cinema-svc",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "DEBUG=cinema-svc:* ADMIN_FPSWD=1234 USERS_SVC_URL=http://0.0.0.0:5858 AUTH_SVC_URL=http://0.0.0.0:5050 SUBS_SVC_URL=http://0.0.0.0:3030 node ./app.mjs"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.x",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "feather-icons": "^4.25.0",
+    "http-errors": "^1.7.3",
+    "jquery": "^3.5.x",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "superagent": "^6.1.0"
+  }
+}

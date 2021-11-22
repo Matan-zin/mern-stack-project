@@ -1,0 +1,10 @@
+export const LOGIN         = 'http://172.25.0.20:3000/auth/login';   // ip addr are based on docker-compose
+export const SIGN_UP       = 'http://172.25.0.20:3000/auth/signup';
+export const LOGOUT        = 'http://172.25.0.20:3000/auth/logout';
+export const PROTECTED     = 'http://172.25.0.20:3000/auth/protected';
+export const AUTH          = 'http://172.25.0.20:3000/auth';
+export const DETAILS       = "http://172.25.0.20:3000/details";
+export const PERMISSIONS   = "http://172.25.0.20:3000/permissions";
+export const MEMBERS       = "http://172.25.0.20:3000/members";
+export const MOVIES        = "http://172.25.0.20:3000/movies";
+export const SUBSCRIPTIONS = "http://172.25.0.20:3000/subscriptions";

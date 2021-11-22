@@ -1,0 +1,73 @@
+.logo, .user-name {
+  color: var(--text-color-bg-1);
+}
+.user-name { 
+  margin-left: auto;
+  margin-right: .7em;
+}
+.menu-icon {
+  all: unset;
+  width: 26px;
+  height: 5px;
+  border-radius: 4px;
+  background-color: var(--background-color-2);
+}
+.logo, .menu-icon { 
+  margin: 0 1.7em;
+}
+header nav button { all: unset; cursor: pointer; }
+header {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  border-bottom: 1px solid var(--text-color-bg-1);
+  background-color: var(--background-color-1);
+}
+header a {
+  all: unset;
+  text-decoration: none;
+}
+
+@media (max-width: 611px) {
+  nav {
+    top: 100%;
+    z-index: 200;
+    border-left: 1px solid var(--text-color-bg-2);
+    border-bottom: 1px solid var(--text-color-bg-2);
+    border-bottom-left-radius: 12px;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    background-color:var(--background-color-2);
+    position: absolute !important;
+    right: -9999px;
+    margin-top: 1px; 
+    padding: .8em;
+  }
+nav *, nav a { margin-top: .4em;}
+  
+  .menu-icon:checked {
+    display: inline-block;
+    animation: icon 1s ease-in-out forwards;
+  }
+  
+  .menu-icon:checked ~ nav {
+    animation: navbar 1s ease-in-out forwards;
+  }
+  
+  @keyframes icon {
+    0%   { transform: rotate(0deg);}
+    100% { transform: rotate(90deg);}
+  }
+  @keyframes navbar {
+    0%   { right: -50vw; }
+    100% { right: 0vw;}
+  }
+}
+
+label.menu-icon {
+  all: unset;
+  visibility: hidden;
+}
