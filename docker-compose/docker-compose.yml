@@ -65,9 +65,8 @@ services:
       - subs-svc
       - users-svc
     networks:
-      cinemanet:  
-      frontnet:
-        ipv4_address: '172.25.0.20'
+      - cinemanet 
+      - frontnet
     restart: unless-stopped
   
 
@@ -78,22 +77,31 @@ services:
       - cinema-svc
     networks:
       - frontnet
+    restart: unless-stopped
+
+
+
+  reverse-proxy:
+    build: ../reverse-proxy
+    container_name: reverse-proxy
+    depends_on:
+      - react-client
+    networks:
+      - frontnet
     ports:
       - "80:80"
     restart: unless-stopped
-
   
+
+
 networks:
-  frontnet:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.0.0/24
   cinemanet:
     driver: bridge
   authnet:
     driver: bridge
   subsnet:
+    driver: bridge
+  frontnet:
     driver: bridge
 
 
