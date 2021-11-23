@@ -12,12 +12,12 @@ To build this service seperatly from docker-compose,
 
 run on current directory:
 
-```
+`
 $ sudo docker build -t users-svc-im ./users-svc/ 
-```
-```
+`<br/>
+`
 $ sudo docker run -d --name users-svc -p 5858:5858 users-svc-im 
-```
+`<br/>
 
 
 ## API

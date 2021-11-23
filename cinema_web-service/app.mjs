@@ -52,8 +52,5 @@ app.set('port', port);
 export const server = http.createServer(app);
 
 server.listen(port);
-server.on('request', (req, res) => {
-  console.log(`${new Date().toISOString()} request ${req.method} ${req.url}`)
-});
 server.on('error', onError);
 server.on('listening', onListening);

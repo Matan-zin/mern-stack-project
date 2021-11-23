@@ -14,9 +14,9 @@ To build this service seperatly from docker-compose,
 
 run on current directory:
 
-``` 
+` 
 sudo docker build -t cinema-svc-im . 
-```
-``` 
+`<br/>
+` 
 sudo docker run -d --name cinema-svc -p 3100:3100 cinema-svc-im 
-```
+`<br/>

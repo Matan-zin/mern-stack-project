@@ -25,10 +25,6 @@ server.listen(process.env.PORT || 5858, () => {
     debug(`listening on ${server.url}`)
 })
 
-server.on('request', (req, res, next) => {
-    console.log(req.url)
-})
-
 process.on('uncaughtException', function(err) { 
     console.error(`[uncaught exception] ${ err.stack || err }`);
     process.exit(1);

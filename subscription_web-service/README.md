@@ -12,18 +12,18 @@ To build this service seperatly from docker-compose,
 
 run on current directory:
 
-```
+`
 $ sudo docker build -t subs-db-im ./subs-db/
-```
-``` 
+`<br/>
+` 
 $ sudo docker run -d --name subs-db -p 27017:27017 subs-db-im
-```
-```
+`<br/>
+`
 $ sudo docker build -t subs-svc-im ./subs-svc/
-```
-```
+`<br/>
+`
 $ sudo docker run -d --name subs-svc -p 3030:3030 subs-svc-im
-```
+`<br/>
 
 ## API
 

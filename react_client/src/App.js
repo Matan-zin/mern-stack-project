@@ -10,7 +10,7 @@ import Dashboard from './pages/dashboard';
 
 function App() {
   return (
-    <BrowserRouter basename="/app">
+    <BrowserRouter>
     <Switch>
     <Route exact path={ ROUTE.LOGIN }   component={ Login }  />
     <Route exact path={ ROUTE.SIGN_UP } component={ Signup } />

@@ -53,7 +53,7 @@ export default class baseModel {
     async get(id) {
         const url = id ? this[_requrl](`/${this[_name]}/${id}`) 
                        : this[_requrl](`/${this[_name]}`);
-        console.log(url)
+                       
         return new Promise((resolve, reject) => {
             superagent
                 .get(url)

@@ -42,7 +42,7 @@ try {
     if(!result) res.status(404).json('details not found');
     else res.status(201).json(result);
 }
-catch(err) {console.log(err);res.status(500).json(err.message)}});
+catch(err) { res.status(500).json(err.message)}});
 
 
 

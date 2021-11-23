@@ -36,7 +36,7 @@ try {
     const result = await model.Login(username, password);
     if(!result) res.status(403).json('username or password are incorrect');
     else {
-        res.cookie(COOKIE_NAME, result.token, { sameSite: 'none', signed: true });
+        res.cookie(COOKIE_NAME, result.token, { sameSite: 'none', secure: true , signed: true });
         res.json({ success: result.checked });
     }
 } catch(err) { res.status(500).json(err.message) }});
@@ -60,4 +60,4 @@ router.post('/', passport.authenticate(COOKIE_NAME, { session: false }),
 try {
     const result = await model.create(req.body.data);
     res.status(201).json(result)
-} catch(err) {console.log(err.message); res.status(500).json(err.message) }});
+} catch(err) { res.status(500).json(err.message) }});
