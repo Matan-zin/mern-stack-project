@@ -28,7 +28,7 @@ $ sudo systemctl status docker.socket
 ```
 navigate to docker-compose directory 
 ```
-$ cd docker-compose && sudo docker-comopose up --build
+$ cd docker-compose && sudo docker-compose up --build
 ```
 navigate to localhost on your browser
 
