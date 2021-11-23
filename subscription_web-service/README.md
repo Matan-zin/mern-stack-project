@@ -10,7 +10,7 @@ To build this service seperatly from docker-compose,
 - docker
 - docker.socket active run `sudo systemctl status docker.socket` to verify
 
-run on current directory:
+run on current directory:<br/>
 
 `
 $ sudo docker build -t subs-db-im ./subs-db/

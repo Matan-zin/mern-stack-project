@@ -17,19 +17,19 @@ password: `1234` <br/>
 
 #### Installation:
 
-cloning the project
+cloning the project<br/>
 `
 $ git clone https://github.com/Matan-zin/mern-stack-project
 `<br/>
-verify docker.socket are active
+verify docker.socket are active<br/>
 `
 $ sudo systemctl status docker.socket
 `<br/>
-navigate to docker-compose directory 
+navigate to docker-compose directory <br/>
 `
 $ cd docker-compose && sudo docker-compose up --build
 `<br/>
-navigate to localhost on your browser
+navigate to localhost on your browser<br/>
 
 ---
 ## App Design:
