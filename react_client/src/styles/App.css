@@ -78,3 +78,13 @@ button {
 [class*="btns"] button {
   margin-right: .3em;
 }
+
+@media(min-width: 800px) and (max-width: 9999px) {
+  [class*="list"] {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

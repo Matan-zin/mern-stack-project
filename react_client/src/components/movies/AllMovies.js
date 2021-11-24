@@ -14,10 +14,11 @@ export default function AllMovies({ url, isDeleteVisible }) {
     const [search, setSearch] = useState('');
     const [movies, setMovies] = useState(false);
     const [movieList, setMovieList] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         get_data('movies').then(res => setMovies(res.data)).catch(err => console.error(err.message));
-    }, []);
+    }, [refresh]);
 
     useEffect(() => {
         if( hash ) setTimeout(() => window.location.assign(url + hash), 200);
@@ -33,6 +34,7 @@ export default function AllMovies({ url, isDeleteVisible }) {
 
     const handleDelete = async (id) => {
         delete_data("movies", id);
+        setRefresh(!refresh);
     }
 
     const storeId = (docId) => {
@@ -49,7 +51,7 @@ export default function AllMovies({ url, isDeleteVisible }) {
              name="search movie"
              type="text"
              onChange={({ target }) => setSearch(target.value)} />
-
+        <div className="list">
         { movieList.map((movie, index) => {
             return (
                 <div className="movie-card" key={index}>
@@ -79,6 +81,7 @@ export default function AllMovies({ url, isDeleteVisible }) {
             )    
           })
         }
+        </div>
         </>
         )}
         </>

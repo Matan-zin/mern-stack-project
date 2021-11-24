@@ -40,7 +40,7 @@ export default function MovieWatched({ _id, movies }) {
                    <ul key={index}>
                     <li>
                     <Link to={`${ROUTE.MOVIES}#${movie.movieId}`}>
-                    { movies.filter(item => item._id === movie.movieId)[0].name }
+                    { movies.filter(item => item._id === movie.movieId)[0]?.name }
                     </Link>
                     <span> , {new Date(movie.date).toDateString()}</span>
                     </li>

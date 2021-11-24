@@ -9,8 +9,8 @@ export default function AllUsers({ url }) {
 
     const history = useHistory();
     const [refresh,     setRefresh]     = useState(false);
-    const [details,     setDetails]     = useState([]);
-    const [permissions, setPermissions] = useState([]);
+    const [details,     setDetails]     = useState(false);
+    const [permissions, setPermissions] = useState(false);
 
 
     const storeId = (id) => {
@@ -32,8 +32,8 @@ export default function AllUsers({ url }) {
     },[refresh])
 
     return <>
-        { (details.length > 0 && permissions.length > 0) ? 
-          <>
+        { (details && permissions) ? 
+          <div className="list">
             { details.map((detail, index) => (
               <div className="user-card" key={index}>
               <form aria-label="user info" role="presentation">
@@ -54,7 +54,7 @@ export default function AllUsers({ url }) {
               </form>
               </div>
             ))}
-          </>
+          </div>
            : <Skeleton count={1} /> }
         </>
                 

@@ -15,6 +15,9 @@
 .logo, .menu-icon { 
   margin: 0 1.7em;
 }
+.logo:hover {
+  cursor: pointer;
+}
 header nav button { all: unset; cursor: pointer; }
 header {
   width: 100vw;
@@ -28,6 +31,10 @@ header {
 header a {
   all: unset;
   text-decoration: none;
+}
+label.menu-icon {
+  all: unset;
+  visibility: hidden;
 }
 
 @media (max-width: 611px) {
@@ -67,7 +74,26 @@ nav *, nav a { margin-top: .4em;}
   }
 }
 
-label.menu-icon {
-  all: unset;
-  visibility: hidden;
+@media (min-width: 612px) and (max-width: 9999px) {
+  .menu-icon {
+    display: none;
+  }
+  nav {
+    display: flex;
+    color: var(--text-color-bg-1);
+    justify-content: space-around;
+    width: 400px;
+  }
+  nav a {
+    border: 1px solid var(--text-color-bg-1);
+    padding: 2px 5px;
+  }
+  nav a:hover {
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .logout {
+    color: var(--text-color-bg-1);
+    margin: 0 .3em;
+  }
 }

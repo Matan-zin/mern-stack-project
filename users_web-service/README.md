@@ -1,28 +1,27 @@
-# Users Service
+## Users Service
+
 ---
 
-## Build
+### Build
 
 To build this service seperatly from docker-compose,
 
-### Prerequisites:
+#### Prerequisites:
 
 - docker
 - docker.socket active run `sudo systemctl status docker.socket` to verify
 
 run on current directory:<br/>
 
-`
-$ sudo docker build -t users-svc-im ./users-svc/ 
-`<br/>
-`
+```bash
+$ sudo docker build -t users-svc-im ./users-svc/
+
 $ sudo docker run -d --name users-svc -p 5858:5858 users-svc-im 
-`<br/>
+```
 
+### API
 
-## API
-
-### HTTP methods:
+#### HTTP methods:
 
 
 ```

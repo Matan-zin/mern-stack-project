@@ -11,6 +11,7 @@ export default function AllMembers({ url , isDeleteVisible}) {
 
     const [movies,  setMovies]  = useState(false);
     const [members, setMembers] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     const history = useHistory();
     const { hash } = useLocation();
@@ -18,7 +19,7 @@ export default function AllMembers({ url , isDeleteVisible}) {
     useEffect(() => {
         get_data('movies' ).then(res => setMovies(res.data) ).catch(err => console.error(err.message));
         get_data('members').then(res => setMembers(res.data)).catch(err => console.error(err.message));
-    },[]);
+    },[refresh]);
 
     useEffect(() => {
        if( hash ) setTimeout(() => window.location.assign(url + hash), 200);
@@ -33,12 +34,13 @@ export default function AllMembers({ url , isDeleteVisible}) {
     const handleDelete = async (id) => {
         delete_data('movies',  id).catch(err => console.error(err.message));
         delete_data('members', id).catch(err => console.error(err.message));
+        setRefresh(!refresh);
     }
 
     return (
         <>
         { !(members && movies) ? (<Skeleton count={2} />) : (
-        <>
+        <div className="list">
         { members.map(member => {
             return (
                 <div key={member._id} id={member._id} className="member-card">
@@ -61,7 +63,7 @@ export default function AllMembers({ url , isDeleteVisible}) {
                 </div>
             )
         })}
-        </>
+        </div>
         )}
         </>
     )
