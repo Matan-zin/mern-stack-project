@@ -36,7 +36,7 @@ try {
     const result = await model.Login(username, password);
     if(!result) res.status(403).json('username or password are incorrect');
     else {
-        res.cookie(COOKIE_NAME, result.token, { sameSite: 'none', secure: true , signed: true });
+        res.cookie(COOKIE_NAME, result.token, { signed: true });
         res.json({ success: result.checked });
     }
 } catch(err) { res.status(500).json(err.message) }});

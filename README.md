@@ -10,7 +10,7 @@ This web app are for study purposes
 
 Admin credentials are set to: <br/>
 username: `zin`  <br/>
-password: `1234` <br/>
+password: `12345` <br/>
 
 #### Prerequisites:
     - docker

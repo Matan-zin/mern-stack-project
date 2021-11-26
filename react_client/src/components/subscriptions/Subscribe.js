@@ -1,23 +1,28 @@
 import { useState } from "react";
-import { update_data } from '../../services/services';
+import { update_data, create_data } from '../../services/services';
 
-export default function Subscribe({ 
+export default function Subscribe({
     movies,
     setExpend,
+    setSubscriptions,
     subscriptions })
 {
     const [date, setDate] = useState(null);
     const [option, setOption] = useState(movies[0]['name']);
+    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         let movieId = movies.filter(movie => movie['name'] === option)[0]['_id'];
         subscriptions.movies.push({ movieId, date });
-        try { await update_data('subscriptions', subscriptions); }
+        try { 'empty' in subscriptions
+                ? await create_data('subscriptions', {_id : subscriptions._id, movies: subscriptions.movies }) 
+                : await update_data('subscriptions', subscriptions) }
         catch(err) { console.error(err.message) }
-        setExpend(false)
+        setSubscriptions(false);
+        setExpend(false);
     }
-
+console.log(subscriptions, subscriptions.movies.length)
     return (
         <form onSubmit={handleSubmit} className="sub-to-new">
         <label htmlFor="movies">Add new movie:</label>

@@ -32,8 +32,10 @@ export default function AllMovies({ url, isDeleteVisible }) {
         }
     }, [search, movies])
 
+
     const handleDelete = async (id) => {
         delete_data("movies", id);
+        setMovies(false);
         setRefresh(!refresh);
     }
 

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 :root {
-  --text-color-bg-1: white;
-  --text-color-bg-2: black;
+  --text-color-1: white;
+  --text-color-2: black;
   --background-color-1: black;
   --background-color-2: white;
 }
@@ -16,7 +16,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  color: var(--text-color-bg-2);
+  color: var(--text-color-2);
   background-color: var(--background-color-2);
   font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
@@ -27,7 +27,7 @@ button {
   cursor: pointer;
   padding: .1em 1.5em;
   border-radius: 8px;
-  color: var(--text-color-bg-1);
+  color: var(--text-color-1);
   background-color: var(--background-color-1);
 }
 

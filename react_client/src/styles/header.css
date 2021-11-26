@@ -1,5 +1,5 @@
 .logo, .user-name {
-  color: var(--text-color-bg-1);
+  color: var(--text-color-1);
 }
 .user-name { 
   margin-left: auto;
@@ -25,7 +25,7 @@ header {
   display: flex;
   position: fixed;
   align-items: center;
-  border-bottom: 1px solid var(--text-color-bg-1);
+  border-bottom: 1px solid var(--text-color-1);
   background-color: var(--background-color-1);
 }
 header a {
@@ -41,8 +41,8 @@ label.menu-icon {
   nav {
     top: 100%;
     z-index: 200;
-    border-left: 1px solid var(--text-color-bg-2);
-    border-bottom: 1px solid var(--text-color-bg-2);
+    border-left: 1px solid var(--text-color-2);
+    border-bottom: 1px solid var(--text-color-2);
     border-bottom-left-radius: 12px;
     display: flex;
     text-align: right;
@@ -80,12 +80,12 @@ nav *, nav a { margin-top: .4em;}
   }
   nav {
     display: flex;
-    color: var(--text-color-bg-1);
+    color: var(--text-color-1);
     justify-content: space-around;
     width: 400px;
   }
   nav a {
-    border: 1px solid var(--text-color-bg-1);
+    border: 1px solid var(--text-color-1);
     padding: 2px 5px;
   }
   nav a:hover {
@@ -93,7 +93,7 @@ nav *, nav a { margin-top: .4em;}
     cursor: pointer;
   }
   .logout {
-    color: var(--text-color-bg-1);
+    color: var(--text-color-1);
     margin: 0 .3em;
   }
 }

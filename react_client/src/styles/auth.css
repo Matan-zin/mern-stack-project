@@ -5,8 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--auth-page-color);
-    box-shadow: 1px 1px 20px 1px var(--auth-page-shdow);
     font-size: 1.2em;
 }
 .auth-c { 

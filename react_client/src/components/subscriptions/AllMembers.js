@@ -34,6 +34,8 @@ export default function AllMembers({ url , isDeleteVisible}) {
     const handleDelete = async (id) => {
         delete_data('movies',  id).catch(err => console.error(err.message));
         delete_data('members', id).catch(err => console.error(err.message));
+        setMovies(false);
+        setMembers(false);
         setRefresh(!refresh);
     }
 
