@@ -19,8 +19,8 @@
 *.env.production.local
 *.terraform.lock.hcl
 *.terraform
+*.tfstate*
 
 /**/npm-debug.log*
 /**/yarn-debug.log*
 /**/yarn-error.log*
-/terraform-swarm

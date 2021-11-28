@@ -1,0 +1,11 @@
+variable "aws_region"           { default = "us-east-2" }
+variable "enable_dns_support"   { default = true }
+variable "enable_dns_hostnames" { default = true }
+variable "project_name"         { default = "cinema" }
+variable "vpc_name"             { default = "cinema-vpc" }
+variable "vpc_cidr"             { default = "10.0.0.0/16" }
+variable "public1_cidr"         { default = "10.0.1.0/24" }
+variable "private1_cidr"        { default = "10.0.3.0/24" }
+variable "ami_id"               { default = "ami-0629230e074c580f2" }
+variable "instance_type"        { default = "t2.micro" }
+variable "key_pair"             { default = "cinema-app-key-pair" }
