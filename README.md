@@ -15,7 +15,6 @@ password: `12345` <br/>
 #### Prerequisites:
     - docker
     - docker-comopse
-    - node
 
 #### Installation:
 
