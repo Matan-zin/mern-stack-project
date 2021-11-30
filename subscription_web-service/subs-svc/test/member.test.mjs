@@ -66,7 +66,6 @@ await request(server)
     
 
 
-
 await request(server)
             .get(`/members/${global_id}`)
             .expect('Content-Type', /json/)
@@ -80,7 +79,7 @@ await request(server)
             }).catch(e => console.log(unpass + ' GET /members/:id'));
 
 
-            
+           
 await request(server)
             .del(`/members/${global_id}`)
             .expect('Content-Type', /json/)

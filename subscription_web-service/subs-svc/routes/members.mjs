@@ -2,10 +2,10 @@ import { members as model } from "../models/members.mjs";
 
 const membersParams = (req) => {
     return {
-        _id :  req.body.data._id,
-        name:  req.body.data.name,
-        email: req.body.data.email,
-        city:  req.body.data.city
+        _id :  req.body?.data?._id   || req.body._id,
+        name:  req.body?.data?.name  || req.body.name,
+        email: req.body?.data?.email || req.body.email,
+        city:  req.body?.data?.city  || req.body.city 
     }
 }
 
@@ -26,7 +26,7 @@ export async function routeMembers(server) {
 
     server.put(`/members`, async (req, res, next) => {
         try {
-            const result = await model.update(req.params._id ,membersParams(req));
+            const result = await model.update(membersParams(req));
             
             res.contentType = 'json';
             res.send(result);

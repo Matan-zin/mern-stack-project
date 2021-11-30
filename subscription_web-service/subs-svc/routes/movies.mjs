@@ -2,11 +2,11 @@ import { movies as model } from "../models/movies.mjs";
 
 const moviesParams = (req) => {
     return {
-        _id :      req.body.data._id,
-        name:      req.body.data.name,
-        genres:    req.body.data.genres,
-        image:     req.body.data.image,
-        premiered: req.body.data.premiered
+        _id :      req.body?.data?._id       || req.body._id,
+        name:      req.body?.data?.name      || req.body.name,
+        genres:    req.body?.data?.genres    || req.body.genres,
+        image:     req.body?.data?.image     || req.body.image,
+        premiered: req.body?.data?.premiered || req.body.premiered
     }
 }
 
@@ -56,7 +56,7 @@ export async function routeMovies(server) {
             let result;
             if(req.query) result = await model.querylist(req.query);
             else result = await model.list();
-            
+
             res.contentType = 'json';
             res.send(result);
             next(false);

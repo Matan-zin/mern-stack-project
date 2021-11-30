@@ -7,7 +7,6 @@ const pass   = '\u2705';
 const unpass = '\u274c';
 
 let sub_mock = {
-    memberId: 'abc1234',
     movies: [ 
         { movieId: 'ab11', date: new Date() },
         { movieId: 'ab12', date: new Date() },
@@ -25,7 +24,7 @@ await request(server)
             .set('Accept', 'application/json')
             .expect(200)
             .then(response => {
-                assert(response.body.memberId  === 'abc1234');
+                assert(response.body.movies[0].movieId === 'ab11');
                 assert(response.body.movies[1].movieId === 'ab12');
                 sub_mock._id = response.body._id;
                 console.log(pass + ' POST /subscriptions');
@@ -40,7 +39,7 @@ await request(server)
             .set('Accept', 'application/json')
             .expect(200)
             .then(response => {
-                assert(response.body.memberId  === 'abc1234');
+                assert(response.body._id  === sub_mock._id);
                 assert(response.body.movies[1].movieId === 'ab33');
                 console.log(pass + ' PUT /subscriptions');
             }).catch(e => console.log(unpass + ' PUT /subscriptions'));
@@ -53,9 +52,9 @@ await request(server)
             .expect('Server', 'sub-svc')
             .expect(200)
             .then(response => {
-                assert( response.body.length === 11 );
-                assert( 'memberId' in response.body[0]);
-                assert( 'movies'   in response.body[0]);   
+                assert( response.body.length > 0 );
+                assert( '_id'    in response.body[0]);
+                assert( 'movies' in response.body[0]);   
                 console.log(pass   + ' GET /subscriptions');
             })
             .catch(err => console.log(unpass + ' GET /subscriptions') );
@@ -68,7 +67,7 @@ await request(server)
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
-                assert(response.body.memberId  === 'abc1234');
+                assert(response.body._id  === sub_mock._id);
                 assert(response.body.movies[1].movieId === 'ab33');
                 console.log(pass + ' GET /subscriptions/:id');
             }).catch(e => console.log(unpass + ' GET /subscriptions/:id'));

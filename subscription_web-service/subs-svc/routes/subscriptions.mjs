@@ -2,8 +2,8 @@ import { subscriptions as model } from "../models/subscriptions.mjs";
 
 const subscriptionsParams = (req) => {
     return {
-        _id:      req.body.data._id,
-        movies:   req.body.data.movies,
+        _id:    req.body?.data?._id    || req.body._id,
+        movies: req.body?.data?.movies || req.body.movies,
     }
 }
 
