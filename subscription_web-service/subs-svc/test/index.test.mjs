@@ -1,7 +1,13 @@
 /**
- * To run those tests, you need to run a container instance
- * on background and expose port 27017.
- * then run $ npm run test
+ * To run those tests, 
+ * you need to run a container database instance from subs-db
+ * 
+ * $ docker build -t subs-db-im /path/to/subs-db/
+ * $ docker run --name subs-db -p 27017:27017 -d subs-db-im
+ * 
+ * then run 
+ * 
+ * $ npm run test
  */
 
 import { server } from "../app.mjs";
