@@ -1,0 +1,1 @@
+export const media = 'test-file-stub';

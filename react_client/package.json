@@ -19,7 +19,7 @@
   "scripts": {
     "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +39,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-flow": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "identity-obj-proxy": "^3.0.0",
+    "msw": "^0.35.0"
   }
 }
