@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import user from '@testing-library/user-event';
 import { render, screen, waitFor } from '@testing-library/react';
+
 import Signup from '../pages/signup';
+import * as ROUTE from '../constants/routes';
 import { signup } from '../services/services';
 
 const mock_history_push = jest.fn();
@@ -19,7 +21,7 @@ jest.mock('react-router-dom', () => ({
 describe('<Signup />', () => {
 beforeEach(() => { jest.clearAllMocks(); })
 
-    test('Signup page with a form submissions and user create an account', () => {
+    test('Signup page with a form submissions and user create an account', async () => {
 
       signup.mockImplementation(() => (true));
         
@@ -40,6 +42,10 @@ beforeEach(() => { jest.clearAllMocks(); })
         expect(password_input.getAttribute('value')).toEqual('12345')
         
         user.click(submit);
+
+        await waitFor(() => {
+          expect(mock_history_push).toBeCalledWith(ROUTE.LOGIN);
+        })
     })
 
 
@@ -71,6 +77,7 @@ beforeEach(() => { jest.clearAllMocks(); })
 
         expect(error_message).toBeInTheDocument();
         expect(screen.getByText(/username are invalid../i)).toBeInTheDocument();
+        expect(mock_history_push).not.toBeCalled();
       })
     })
 })

@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import user from '@testing-library/user-event';
 import { render, screen, waitFor } from '@testing-library/react';
+
 import Login from '../pages/login';
+import * as ROUTE from '../constants/routes';
 import { login } from '../services/services';
 
 const mock_history_push = jest.fn();
@@ -19,7 +21,9 @@ jest.mock('react-router-dom', () => ({
 describe('<Login />', () => {
 beforeEach(() => { jest.clearAllMocks(); })
 
-    test('Login page with a form submissions and logs the user in', () => {
+    // :)
+
+    test('Login page with a form submissions and logs the user in', async () => {
 
       login.mockImplementation(() => ({ data: { success: { check: true }}}));
         
@@ -41,9 +45,14 @@ beforeEach(() => { jest.clearAllMocks(); })
         
         user.click(submit);
 
+        await waitFor(() => {
+          expect(mock_history_push).toBeCalledWith(ROUTE.DASHBOARD);
+        })
+
     })
 
 
+    // :(
 
     test('Login page with a form submissions with incorrcet credentials', async () => {
       
@@ -72,6 +81,7 @@ beforeEach(() => { jest.clearAllMocks(); })
 
         expect(error_message).toBeInTheDocument();
         expect(screen.getByText(/Error: incorrect credentials/i)).toBeInTheDocument();
+        expect(mock_history_push).not.toBeCalled();
       })
     })
 })
