@@ -1,8 +1,7 @@
-FROM node:14
+FROM node:lts-alpine3.14
 
-RUN apt-get update -y  \
-    && apt-get upgrade -y \
-    && apt-get -y install curl python build-essential git ca-certificates 
+RUN apk update \
+    && apk upgrade
 
 
 ENV PORT="3030" 
