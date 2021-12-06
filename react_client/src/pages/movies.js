@@ -18,10 +18,10 @@ export default function Movies() {
     const { url, path } = useRouteMatch();
     const permissions = useContext(PermissionsContext);
 
-    const isAllVisible    = permissions?.['View Movie']   === 'true' || permissions.admin;
-    const isAddVisible    = permissions?.['Create Movie'] === 'true' || permissions.admin;
-    const isEditVisible   = permissions?.['Update Movie'] === 'true' || permissions.admin;
-    const isDeleteVisible = permissions?.['Delete Movie'] === 'true' || permissions.admin;
+    const isAllVisible    = permissions?.['View Movies']   === 'true' || permissions.admin;
+    const isAddVisible    = permissions?.['Create Movies'] === 'true' || permissions.admin;
+    const isEditVisible   = permissions?.['Update Movies'] === 'true' || permissions.admin;
+    const isDeleteVisible = permissions?.['Delete Movies'] === 'true' || permissions.admin;
 
     return (
         <>
