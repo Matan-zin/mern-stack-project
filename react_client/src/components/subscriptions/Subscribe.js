@@ -22,7 +22,7 @@ export default function Subscribe({
         setSubscriptions(false);
         setExpend(false);
     }
-console.log(subscriptions, subscriptions.movies.length)
+
     return (
         <form onSubmit={handleSubmit} className="sub-to-new">
         <label htmlFor="movies">Add new movie:</label>
