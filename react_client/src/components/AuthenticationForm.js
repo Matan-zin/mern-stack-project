@@ -34,7 +34,7 @@ export default function AuthenticationForm({ handleSubmit, err, btnName }) {
             <input
                 name="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="Enter your Password"
                 value={ password }
                 onChange={({ target }) => setPassword(target.value)}
                 />

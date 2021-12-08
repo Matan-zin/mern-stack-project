@@ -29,13 +29,14 @@ export default function Login() {
         <div className="auth-p">
         <img className="logo-auth" src={logo} alt="logo" />
         <div className="auth-c">
+        <h1>Cinema<span>Admin</span></h1>
         <h3>Login</h3>
         <AuthenticationForm 
             handleSubmit={ handleLogin }
             err={ error }
             btnName={ 'Login' } />
         <span className="new-user">
-            New User ?{` `}<Link to={ROUTE.SIGN_UP}>Create an Account</Link>
+            New User?{` `}<Link to={ROUTE.SIGN_UP}>Create an Account</Link>
         </span>
         </div>
         </div>

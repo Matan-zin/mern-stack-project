@@ -28,6 +28,26 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      ],
+      "moduleNameMapper": {
+          "\\.(png|jpg|webp|ttf|woff|woff2|svg|mp4)$": "<rootDir>/mocks/media.js",
+          "\\.(css)$": "identity-obj-proxy"
+      },
+      "coverageThreshold": {
+          "global": {
+              "branches": 90,
+              "functions": 90,
+              "lines": 90,
+              "statements": 90
+          }
+      },
+      "coverageReporters": [
+          "html",
+          "text" 
+      ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

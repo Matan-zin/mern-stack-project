@@ -24,6 +24,7 @@ export default function Signup() {
         <div className="auth-p">
         <img className="logo-auth" src={logo} alt="logo" />
         <div className="auth-c">
+        <h1>Cinema<span>Admin</span></h1>
         <h3>Create an Account</h3>
         <AuthenticationForm
             handleSubmit={ handleCreate }
