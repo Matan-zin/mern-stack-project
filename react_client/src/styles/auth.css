@@ -74,7 +74,13 @@
     }
 }
 
-@media (min-width: 612px) and (max-width: 9999px) {
+@media (min-width: 612px) and (max-width: 800px) {
+    .logo-auth {
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 9999px) {
     .auth-c {
         width: 496px;
         height: 50%;
