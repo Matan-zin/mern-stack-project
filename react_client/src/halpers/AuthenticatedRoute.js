@@ -12,17 +12,16 @@ export default function AuthenticatedRoute({ redirect, children, ...rest }) {
             .catch(() => setAuth({ success: undefined }))
     };
     useEffect(() => checkAuthenticated(), [])
-    return  React.cloneElement(children);
-    // return (
-        // <>
-        {/* { !auth  */}
-          // ? ( <Skeleton count={1} /> 
-        // ) : ( 
-        // <Route { ...rest } render={({ location }) => {
-                // return auth.success 
-                            // ? React.cloneElement(children) 
-                            // : <Redirect to={{ pathname: redirect, state: { from: location} }} /> }}/>
-        //  )}
-        // </>
-    // )
+    return (
+        <>
+        { !auth 
+          ? ( <Skeleton count={1} /> 
+        ) : ( 
+        <Route { ...rest } render={({ location }) => {
+                return auth.success 
+                            ? React.cloneElement(children) 
+                            : <Redirect to={{ pathname: redirect, state: { from: location} }} /> }}/>
+         )}
+        </>
+    )
 }

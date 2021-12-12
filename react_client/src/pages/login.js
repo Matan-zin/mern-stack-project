@@ -14,13 +14,13 @@ export default function Login() {
 
     const handleLogin = async (username, password) => {
         try {
-            // const res = await login(username, password);
-            // 
-            // if(res.data.success.check) { 
-                // localStorage.setItem('id', res.data.success.id);
-                // localStorage.setItem('username', res.data.success.username);
+            const res = await login(username, password);
+            
+            if(res.data.success.check) { 
+                localStorage.setItem('id', res.data.success.id);
+                localStorage.setItem('username', res.data.success.username);
                 history.push(ROUTE.DASHBOARD);
-            //}
+            }
         }
         catch(error) { setError(error.toString()) }
     };
