@@ -1,7 +1,4 @@
 
-.welcome-page-wrraper {
-}
-
 @media (max-width: 612px) {   
     .welcome-page-wrraper {
         display: flex;
