@@ -16,11 +16,21 @@
     "universal-cookie": "^4.0.4",
     "web-vitals": "^1.1.2"
   },
+  "resolutions": {
+    "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
+    "glob-parent": "^6.0.1",
+    "immer": "^9.0.7",
+    "ansi-regex": "^6.0.1",
+    "browserslist": "^4.18.1",
+    "nth-check": "^2.0.1"
+
+  },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": [
@@ -29,24 +39,23 @@
     ]
   },
   "jest": {
-    "collectCoverageFrom": [
-      ],
-      "moduleNameMapper": {
-          "\\.(png|jpg|webp|ttf|woff|woff2|svg|mp4)$": "<rootDir>/mocks/media.js",
-          "\\.(css)$": "identity-obj-proxy"
-      },
-      "coverageThreshold": {
-          "global": {
-              "branches": 90,
-              "functions": 90,
-              "lines": 90,
-              "statements": 90
-          }
-      },
-      "coverageReporters": [
-          "html",
-          "text" 
-      ]
+    "collectCoverageFrom": [],
+    "moduleNameMapper": {
+      "\\.(png|jpg|webp|ttf|woff|woff2|svg|mp4)$": "<rootDir>/mocks/media.js",
+      "\\.(css)$": "identity-obj-proxy"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   },
   "browserslist": {
     "production": [

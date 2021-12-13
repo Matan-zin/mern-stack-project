@@ -7,6 +7,7 @@ import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import { approotdir } from './approotdir.mjs';
 import { configPassport } from './config/passport.mjs';
+import { default as expressCsrf } from 'express-csrf-protect';
 import {
     normalizePort, onError, onListening, handle404, basicErrorHandler
 } from './appsupport.mjs';
@@ -18,9 +19,9 @@ import { router as detailsRouter }       from './routes/details.mjs';
 import { router as permissionsRouter }   from './routes/permissions.mjs';
 import { router as subscriptionsRouter } from './routes/subscriptions.mjs';
 
-import DBG from 'debug';
-const debug = DBG('cinema:app');
-const error = DBG('cinema:app:error');
+// import DBG from 'debug';
+// const debug = DBG('cinema:app');
+// const error = DBG('cinema:app:error');
 
 const PRIV_KEY = fs.readFileSync(approotdir + '/id_rsa_priv.pem')
 export const app = express();
@@ -33,6 +34,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(PRIV_KEY.toString()));
+app.use(expressCsrf.enable({
+    signed: true,
+    secure: true,
+    maxAge: 2 * 60 * 60 * 1000,
+    sameSite: 'none'
+}));
 
 
 app.use('/auth',         authRouter);
