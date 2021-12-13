@@ -7,7 +7,6 @@ import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import { approotdir } from './approotdir.mjs';
 import { configPassport } from './config/passport.mjs';
-import { default as expressCsrf } from 'express-csrf-protect';
 import {
     normalizePort, onError, onListening, handle404, basicErrorHandler
 } from './appsupport.mjs';
@@ -34,12 +33,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(PRIV_KEY.toString()));
-app.use(expressCsrf.enable({
-    signed: true,
-    secure: true,
-    maxAge: 2 * 60 * 60 * 1000,
-    sameSite: 'none'
-}));
 
 
 app.use('/auth',         authRouter);

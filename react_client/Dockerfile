@@ -11,7 +11,7 @@ RUN npm ci --prodection
 
 COPY . .
 
-RUN npm run build
+RUN INLINE_RUNTIME_CHUNK=false npm run build
 
 
 

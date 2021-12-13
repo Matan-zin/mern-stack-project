@@ -3,8 +3,6 @@ import bcrypt from 'bcryptjs';
 import * as URLS from '../constants/urls';
 
 axios.defaults.withCredentials = true;
-axios.defaults.xsrfCookieName = 'XSRF_TOKEN';   // according to express-csrf-protect repo
-axios.defaults.xsrfHeaderName = 'X-XSRF_TOKEN'; // https://github.com/ryanwaite28/express-csrf-protect
 
 const SALT_ROUNDS = 10;
 
