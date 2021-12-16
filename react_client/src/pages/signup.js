@@ -5,7 +5,8 @@ import * as ROUTE from "../constants/routes";
 import AuthenticationForm from "../components/AuthenticationForm";
 
 import '../styles/auth.css';
-import logo from '../assets/logo.svg';
+import logo from '../assets/Cameralogo.png';
+import Title from "../assets/Title";
 
 export default function Signup() {
     
@@ -22,9 +23,9 @@ export default function Signup() {
 
     return (
         <div className="auth-p">
-        <img className="logo-auth" src={logo} alt="logo" />
+        <img className="logo-auth" src={logo} alt="camera" />
         <div className="auth-c">
-        <h1>Cinema<span>Admin</span></h1>
+        <Title />
         <h3>Create an Account</h3>
         <AuthenticationForm
             handleSubmit={ handleCreate }
