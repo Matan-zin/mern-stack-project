@@ -8,3 +8,7 @@
 .sub-to-new > * {
     margin: .1em;
 }
+
+.member-card p{
+    margin-top: 2px;
+}

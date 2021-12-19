@@ -32,11 +32,12 @@ export default function Subscriptions() {
             <div className="sub-head">
 
             <h1>Subscriptions</h1>
-            
+            <div className="btns-wrapper">
             { isAllVisible &&
-            <Button name={'All Members'} url={ url } />
-            }{ isAddVisible &&
+            <Button name={'All Members'} url={ url } /> }
+            { isAddVisible &&
             <Button name={'Add Member'} url={ url + ROUTE.ADD_MEMBER } /> }
+            </div>
             </div>
             <Switch>
             <ProtectedRoute exact path={path} isAllow={isAllVisible} redirect={ROUTE.DASHBOARD}>

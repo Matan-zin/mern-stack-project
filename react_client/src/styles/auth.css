@@ -6,21 +6,25 @@
     justify-content: center;
     align-items: center;
 }
+.auth-c, .logo-auth {
+    background-color: var(--background-color-2);
+}
 .logo-auth {
     width: 250px;
 
 }
 .title {
-    width: 250px;
-    border: 0.5px solid black;
-    letter-spacing: 2.2px;
-    margin-bottom: 1.1em;
+    width: 100%;
+    height: 50px;
     padding: 3px 0;
+    margin-bottom: 1.1em;
+    letter-spacing: 2px;
 }
 .title span {
     color: var(--text-color-1);
     background-color: var(--background-color-1);
-    padding: 3px;
+    padding: 4px 0 4px 4px;
+    margin-left: 2px;
 }
 .auth-c h3 {
     margin-bottom: 1.2em;

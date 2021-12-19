@@ -30,11 +30,13 @@ export default function Movies() {
           <div className="movies-page">
           <div className="movies-head">
           <h1>Movies</h1>
+          <div className="btns-wrapper">
           { isAllVisible &&
-          <Button name={'All Movies'} url={ url } />
-          }{isAddVisible && 
+          <Button name={'All Movies'} url={ url } /> }
+          { isAddVisible && 
           <Button name={'Add Movie'} url={url + ROUTE.ADD_MOVIE} />
           }
+          </div>
           </div>
           <Switch>
           <ProtectedRoute exact path={path} isAllow={isAllVisible} redirect={ROUTE.DASHBOARD}>

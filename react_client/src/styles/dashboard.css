@@ -3,10 +3,4 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-
-}
-
-.jumbo {
-    margin-left: 20vw;
-    margin-top: 30vh;
 }

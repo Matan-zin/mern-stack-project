@@ -39,12 +39,12 @@ export default function AllUsers({ url }) {
               <form aria-label="user info" role="presentation">
               <ul aria-label="user details">
               { Object.entries(detail).map(([key, value], index) => (
-                  key !== 'id' && <li key={index}><span>{key}:</span>{value}</li>      
+                  key !== 'id' && <li key={index}>{key}:<span>{value}</span></li>      
               ))}    
               </ul>
               <ul aria-label="user permissions">
               { Object.entries(permissions.find(perm => perm.id === detail.id)).map(([key, value], index) => (
-                  key !== 'id' && value !== 'false' && <li key={index}><span>{key}:</span>{value}</li>
+                  key !== 'id' && value !== 'false' && <li key={index}>{key}:<span>{value}</span></li>
               ))}
               </ul>
               <div className="user-btns">

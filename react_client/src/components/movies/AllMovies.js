@@ -48,9 +48,9 @@ export default function AllMovies({ url, isDeleteVisible }) {
         <>
         { !movieList ? ( <Skeleton count={4} /> ) : (
         <>
-        <label htmlFor="search movie">Search Movie:</label>
+        <label htmlFor="search-movie">Search Movie:</label>
         <input
-             name="search movie"
+             name="search-movie"
              type="text"
              onChange={({ target }) => setSearch(target.value)} />
         <div className="list">

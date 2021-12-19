@@ -1,25 +1,38 @@
-.user-form input[type="checkbox"] {
-  width: 20%;
-  margin-left: auto;
-}
 .user-form input {
     float: right;
 }
+
+.user-form input[type="checkbox"] {
+  margin-left: auto;
+  margin: 2px 0;
+}
+
+
+.user-form input[name="Session Time Out"]
+{
+    height: 30px;
+    margin-bottom: 8px;
+}
+
 .user-form label {
     float: left;
     width: 60%;
 }
-.user-form > * {
-    margin: .1em 0;
+
+.permission-div label {
+    margin-bottom: 3px;
 }
-.permission-div {
-    margin: .4em 0;
-}
-.user-card li span {
-    text-decoration: underline;
-    font-weight: 900;
-    margin-right: .8em;
-}
+
 .user-card li { 
     margin: .2em 0;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.user-card li span {
+    float: right;
+}
+
+.user-card form {
+    width: 90%;
 }

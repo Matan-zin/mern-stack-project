@@ -18,8 +18,10 @@ export default function UsersManegment() {
         <div className="user-page">
         <div className="user-head">
         <h1>Users Managment</h1>
+        <div className='btns-wrapper'>
         <Button name={'All Users'} url={ url } />
         <Button name={'Add User'}  url={ url + ROUTE.ADD_USER } /> 
+        </div>
         </div>
         <Switch>
         <Route exact path={ path } render={() => <AllUsers url={ url } /> } />

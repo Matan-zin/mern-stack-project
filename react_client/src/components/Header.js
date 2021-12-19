@@ -21,7 +21,7 @@ export default function Header({ username }) {
     return (
     <header>
     <Link to={ROUTES.DASHBOARD}>
-        <span className="logo">CINEMA</span>
+        <span className="logo">CINEMA<span>ADMIN</span></span>
     </Link>
     <span className="user-name">{username}</span>
     { /** input used for css manipulation */}

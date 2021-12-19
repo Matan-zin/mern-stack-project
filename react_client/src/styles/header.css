@@ -1,24 +1,33 @@
 .logo, .user-name {
   color: var(--text-color-1);
 }
+
+.logo, .menu-icon { 
+  margin: 0 1.7em;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--text-color-2);
+  background-color: var(--background-color-2);
+  margin-left: 3px;
+  padding: 0 3px;
+  border-radius: 0 5px 5px 0;
+}
+
 .user-name { 
   margin-left: auto;
   margin-right: .7em;
 }
-.menu-icon {
+
+header nav button { 
   all: unset;
-  width: 26px;
-  height: 5px;
-  border-radius: 4px;
-  background-color: var(--background-color-2);
-}
-.logo, .menu-icon { 
-  margin: 0 1.7em;
-}
-.logo:hover {
   cursor: pointer;
 }
-header nav button { all: unset; cursor: pointer; }
+
 header {
   width: 100vw;
   height: 45px;
@@ -28,32 +37,53 @@ header {
   border-bottom: 1px solid var(--text-color-1);
   background-color: var(--background-color-1);
 }
+
 header a {
   all: unset;
   text-decoration: none;
 }
+
 label.menu-icon {
   all: unset;
   visibility: hidden;
 }
 
+nav {
+  margin-right: 10px;
+}
+
 @media (max-width: 611px) {
+
   nav {
     top: 100%;
+    right: -9999px;
     z-index: 200;
+    padding: .8em;
+    display: flex;
+    position: absolute !important;
+    margin-top: 1px; 
+    text-align: right;
     border-left: 1px solid var(--text-color-2);
     border-bottom: 1px solid var(--text-color-2);
-    border-bottom-left-radius: 12px;
-    display: flex;
-    text-align: right;
     flex-direction: column;
     background-color:var(--background-color-2);
-    position: absolute !important;
-    right: -9999px;
-    margin-top: 1px; 
-    padding: .8em;
+    border-bottom-left-radius: 12px;
   }
-nav *, nav a { margin-top: .4em;}
+
+  nav *, 
+  nav a { 
+    margin-top: .8em;
+    text-align: center;
+  }
+
+  .menu-icon {
+    all: unset;
+    width: 26px;
+    height: 5px;
+    margin: 0 30px;
+    border-radius: 4px;
+    background-color: var(--background-color-2);
+  }
   
   .menu-icon:checked {
     display: inline-block;
@@ -68,6 +98,7 @@ nav *, nav a { margin-top: .4em;}
     0%   { transform: rotate(0deg);}
     100% { transform: rotate(90deg);}
   }
+
   @keyframes navbar {
     0%   { right: -50vw; }
     100% { right: 0vw;}
@@ -75,25 +106,30 @@ nav *, nav a { margin-top: .4em;}
 }
 
 @media (min-width: 612px) and (max-width: 9999px) {
+  
   .menu-icon {
     display: none;
   }
-  nav {
-    display: flex;
-    color: var(--text-color-1);
-    justify-content: space-around;
-    width: 400px;
-  }
-  nav a {
-    border: 1px solid var(--text-color-1);
-    padding: 2px 5px;
-  }
-  nav a:hover {
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  
   .logout {
     color: var(--text-color-1);
     margin: 0 .3em;
   }
+
+  nav {
+    display: flex;
+    width: 400px;
+    color: var(--text-color-1);
+    justify-content: space-around;
+  }
+
+  nav a {
+    border:.5px ridge var(--text-color-1);
+    padding: 2px 5px;
+  }
+
+  nav a:hover {
+    border-radius: 5px;
+    cursor: pointer;
+  }  
 }
