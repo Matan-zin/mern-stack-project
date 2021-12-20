@@ -22,7 +22,7 @@ export default function Signup() {
     }
 
     return (
-        <div className="auth-p film-bg">
+        <div className="auth-p">
         <img className="logo-auth" src={logo} alt="camera" />
         <div className="auth-c">
         <Title />
