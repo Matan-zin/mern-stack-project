@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Tauri&display=swap');
 
 :root {
-  --text-color-1: white;
-  --text-color-2: black;
-  --background-color-1: black;
-  --background-color-2: white;
+  --color-1w: white;
+  --color-2b: black;
 }
 
 * ,
@@ -18,10 +16,10 @@
 body {
   width: 100vw;
   height: 100vh;
-  color: var(--text-color-2);
-  background-color: var(--background-color-2);
-  font-family: 'Tauri', sans-serif;
   z-index: -9999;
+  font-family: 'Tauri', sans-serif;
+  color: var(--color-2b);
+  background-color: var(--color-1w);
 }
 
 button {
@@ -29,15 +27,15 @@ button {
   cursor: pointer;
   padding: .1em 1.5em;
   border-radius: 8px;
-  color: var(--text-color-1);
-  background-color: var(--background-color-1);
+  color: var(--color-1w);
+  background-color: var(--color-2b);
 }
 
 /**
 * General properties for all pages
 */
 
-[class*="page"] {
+.page {
   width: 100vw;
   height: 100vh;
   margin-top: 4em;
@@ -46,38 +44,40 @@ button {
   flex-direction: column;
 }
 
-[class*="head"] {
+.head {
   margin: .6em;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-[class*="head"] button:hover,
-[class*="head"] button:active {
+.head-btns-wrapper button:hover,
+.head-btns-wrapper button:active {
   border-radius: 8px;
 }
 
-.btns-wrapper {
+.head-btns-wrapper {
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
-  margin: 20px 0;
   justify-content: space-evenly;
 }
-.btns-wrapper button {
-  border-radius: unset;
-  margin-left: 10px;
+
+.head-btns-wrapper button {
   padding: .4em;
+  margin-left: 10px;
+  border-radius: unset;
   font-weight: bolder;
 }
 
-[class*="card"], [class*="form"] {
+[class*="card"],
+[class*="form"] {
   width: 320px;
-  margin-top: 1.5em;
   padding: 1.2em;
-  border: 1px solid var(--background-color-1);
+  margin-top: 1.5em;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--color-2b);
 }
 
 [class*="form"] input[type="text"],
@@ -92,10 +92,10 @@ button {
   list-style: none;
 }
 
+/* Form and card buttons */
 [class*="btns"] {
   margin: .8em .5em .2em 0em;
 }
-
 [class*="btns"] button {
   margin-right: .6em;
 }
@@ -110,12 +110,3 @@ button {
   }
 }
 
-.film-bg {
-  animation: film .5s linear infinite;
-}
-@keyframes film {
-  25% { background-image: url('../assets/page-bg-1.svg'); }
-  50% { background-image: url('../assets/page-bg-2.svg'); }
-  85% { background-image: url('../assets/page-bg-3.svg'); }
-  100%{ background-image: url('../assets/page-bg-4.svg'); } 
-}

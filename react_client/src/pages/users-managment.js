@@ -15,16 +15,16 @@ export default function UsersManegment() {
     const { url, path } = useRouteMatch();
 
     return (
-        <div className="user-page">
-        <div className="user-head">
+        <div className="page user-page">
+        <div className="head user-head">
         <h1>Users Managment</h1>
-        <div className='btns-wrapper'>
+        <div className='head-btns-wrapper'>
         <Button name={'All Users'} url={ url } />
         <Button name={'Add User'}  url={ url + ROUTE.ADD_USER } /> 
         </div>
         </div>
         <Switch>
-        <Route exact path={ path } render={() => <AllUsers url={ url } /> } />
+        <Route exact path={ path }            render={() => <AllUsers url={ url } /> } />
         <Route path={ path + ROUTE.ADD_USER } render={() => <AddUser  url={ url } /> } /> 
         <Route path={ path + ROUTE.EDIT_USER }render={() => <EditUser url={ url } /> } />
         <Route component={ Notfound } />

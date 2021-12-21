@@ -28,17 +28,15 @@ export default function Subscriptions() {
         <>
         { !permissions ? ( <Skeleton count={1} /> 
             ) : (
-            <div className="sub-page">
-            <div className="sub-head">
-
+            <div className="page sub-page">
+            <div className="head sub-head">
             <h1>Subscriptions</h1>
-            <div className="btns-wrapper">
+            <div className="head-btns-wrapper">
             { isAllVisible &&
             <Button name={'All Members'} url={ url } /> }
             { isAddVisible &&
             <Button name={'Add Member'} url={ url + ROUTE.ADD_MEMBER } /> }
-            </div>
-            </div>
+            </div></div>
             <Switch>
             <ProtectedRoute exact path={path} isAllow={isAllVisible} redirect={ROUTE.DASHBOARD}>
                 <AllMembers url={url} isDeleteVisible={isDeleteVisible} />

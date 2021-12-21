@@ -27,7 +27,7 @@ export default function Login() {
     };
 
     return (
-        <div className="auth-p">
+        <div className="page auth-p">
         <img className="logo-auth" src={logo} alt="camera" />
         <div className="auth-c">
         <Title />
