@@ -1,35 +1,32 @@
 ## Cinema Movies & Subscription managment
 
----
-
-This web app are for study purposes
+### Development Branch
 
 ---
 
 ### Build:
 
-Admin credentials are set to: <br/>
-username: `zin`  <br/>
-password: `12345` <br/>
+To build this development branch on your local </br>
+machine you will need:
 
 #### Prerequisites:
+    - npm
     - docker
     - docker-comopse
 
 #### Installation:
 
 ```bash
-# verify docker.socket are active
-$ sudo systemctl status docker.socket
+# verify docker are active
+$ sudo systemctl status docker
 
-# navigate to docker-compose directory
-$ cd docker-compose && sudo docker-compose up --build
+# if docker are off run
+$ sudo systemctl start docker
 
-# navigate to localhost on your browser
+# navigate to docker-compose directory and run
+$ sudo docker-compose up --build
+
+# navigate to react_client directory
+$ npm install && npm start
 ```
 
----
-
-## App Design:
- 
-![Plan](./Plan.png)
