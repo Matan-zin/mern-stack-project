@@ -66,32 +66,34 @@ services:
       - users-svc
     networks:
       - cinemanet 
-      - frontnet
+      # - frontnet
+    ports:
+      - "3100:3100"
     restart: unless-stopped
   
 
-  react-client:
-    build: ../react_client
-    container_name: react-client
-    depends_on:
-      - cinema-svc
-    networks:
-      - frontnet
-    restart: unless-stopped
+  # react-client:
+  #   build: ../react_client
+  #   container_name: react-client
+  #   depends_on:
+  #     - cinema-svc
+  #   networks:
+  #     - frontnet
+  #   restart: unless-stopped
 
 
 
-  reverse-proxy:
-    build: ../reverse-proxy
-    container_name: reverse-proxy
-    depends_on:
-      - react-client
-    networks:
-      - frontnet
-    ports:
-      - "80:80"
-      - "443:443"
-    restart: unless-stopped
+  # reverse-proxy:
+  #   build: ../reverse-proxy
+  #   container_name: reverse-proxy
+  #   depends_on:
+  #     - react-client
+  #   networks:
+  #     - frontnet
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   restart: unless-stopped
   
 
 
@@ -102,8 +104,8 @@ networks:
     driver: bridge
   subsnet:
     driver: bridge
-  frontnet:
-    driver: bridge
+  # frontnet:
+    # driver: bridge
 
 
 volumes:
