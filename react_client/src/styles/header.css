@@ -1,5 +1,5 @@
 .logo, .user-name {
-  color: var(--text-color-1);
+  color: var(--color-1w);
 }
 
 .logo, .menu-icon { 
@@ -11,8 +11,8 @@
 }
 
 .logo span {
-  color: var(--text-color-2);
-  background-color: var(--background-color-2);
+  color: var(--color-2b);
+  background-color: var(--color-1w);
   margin-left: 3px;
   padding: 0 3px;
   border-radius: 0 5px 5px 0;
@@ -34,8 +34,8 @@ header {
   display: flex;
   position: fixed;
   align-items: center;
-  border-bottom: 1px solid var(--text-color-1);
-  background-color: var(--background-color-1);
+  border-bottom: 1px solid var(--color-2b);
+  background-color: var(--color-2b);
 }
 
 header a {
@@ -63,14 +63,14 @@ nav {
     position: absolute !important;
     margin-top: 1px; 
     text-align: right;
-    border-left: 1px solid var(--text-color-2);
-    border-bottom: 1px solid var(--text-color-2);
+    border-left: 1px solid var(--color-2b);
+    border-bottom: 1px solid var(--color-2b);
     flex-direction: column;
-    background-color:var(--background-color-2);
+    background-color:var(--color-1w);
     border-bottom-left-radius: 12px;
   }
 
-  nav *, 
+  nav .logout ,
   nav a { 
     margin-top: .8em;
     text-align: center;
@@ -82,7 +82,7 @@ nav {
     height: 5px;
     margin: 0 30px;
     border-radius: 4px;
-    background-color: var(--background-color-2);
+    background-color: var(--color-1w);
   }
   
   .menu-icon:checked {
@@ -112,19 +112,19 @@ nav {
   }
   
   .logout {
-    color: var(--text-color-1);
+    color: var(--color-1w);
     margin: 0 .3em;
   }
 
   nav {
     display: flex;
     width: 400px;
-    color: var(--text-color-1);
+    color: var(--color-1w);
     justify-content: space-around;
   }
 
   nav a {
-    border:.5px ridge var(--text-color-1);
+    border:.5px ridge var(--color-1w);
     padding: 2px 5px;
   }
 

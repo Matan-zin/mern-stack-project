@@ -1,18 +1,7 @@
-.auth-p {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.auth-c, .logo-auth {
-    background-color: var(--background-color-2);
-}
 .logo-auth {
     width: 250px;
-
 }
+
 .title {
     width: 100%;
     height: 50px;
@@ -20,39 +9,46 @@
     margin-bottom: 1.1em;
     letter-spacing: 2px;
 }
+
 .title span {
-    color: var(--text-color-1);
-    background-color: var(--background-color-1);
+    color: var(--color-1w);
+    background-color: var(--color-2b);
     padding: 4px 0 4px 4px;
     margin-left: 2px;
 }
+
 .auth-c h3 {
     margin-bottom: 1.2em;
 }
+
 .authentication-f form {
     display: flex;
     flex-direction: column;
     width: 250px;
 }
+
 .authentication-f form input {
     all: unset;
     height: 50px;
     margin-bottom: 1.1em;
-    border: .5px solid black;
+    border: .5px solid var(--color-2b);
     font-size: smaller;
     text-align: center;
 }
+
 .authentication-f form button {
     all: unset;
     height: 50px;
     margin: 1.4em 0;
     text-align: center;
-    color: var(--text-color-1);
-    background-color: var(--background-color-1);
+    color: var(--color-1w);
+    background-color: var(--color-2b);
 }
+
 .new-user {
     font-size: smaller;
 }
+
 [role="log"] {
     color: rgb(141, 18, 18);
     font-size: x-small;

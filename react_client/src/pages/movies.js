@@ -27,17 +27,15 @@ export default function Movies() {
         <>
         { !Boolean(permissions) ? ( <Skeleton count={2} /> 
           ) : (
-          <div className="movies-page">
-          <div className="movies-head">
+          <div className="page movies-page">
+          <div className="head movies-head">
           <h1>Movies</h1>
-          <div className="btns-wrapper">
+          <div className="head-btns-wrapper">
           { isAllVisible &&
           <Button name={'All Movies'} url={ url } /> }
           { isAddVisible && 
-          <Button name={'Add Movie'} url={url + ROUTE.ADD_MOVIE} />
-          }
-          </div>
-          </div>
+          <Button name={'Add Movie'} url={url + ROUTE.ADD_MOVIE} /> }
+          </div></div>
           <Switch>
           <ProtectedRoute exact path={path} isAllow={isAllVisible} redirect={ROUTE.DASHBOARD}>
               <AllMovies url={url} isDeleteVisible={isDeleteVisible} />

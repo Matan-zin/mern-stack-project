@@ -1,3 +1,8 @@
+.welcome-page-wrraper {
+    width: 100vw;
+    height: 100vh;
+}
+
 
 .welcome-page-wrraper img,
 .welcome-page-wrraper h1 {
@@ -7,8 +12,9 @@
 @media (max-width: 612px) {   
     .welcome-page-wrraper {
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
-        align-content: center;
     }
     .welcome-page-wrraper img {
         width: 50%;
@@ -23,8 +29,8 @@
     .welcome-page-wrraper {
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: center;
-        align-content: center;
     }
     .welcome-page-wrraper img {
         width: 300px;
@@ -34,3 +40,14 @@
         margin-right: 5vw;
     }
 }
+
+.film-bg-animation {
+    animation: film .5s linear infinite;
+}
+@keyframes film {
+    25% { background-image: url('../assets/page-bg-1.svg'); }
+    50% { background-image: url('../assets/page-bg-2.svg'); }
+    85% { background-image: url('../assets/page-bg-3.svg'); }
+    100%{ background-image: url('../assets/page-bg-4.svg'); } 
+}
+  
