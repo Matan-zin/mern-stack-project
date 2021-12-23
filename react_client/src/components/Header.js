@@ -26,13 +26,15 @@ export default function Header({ username }) {
     <span className="user-name">{username}</span>
     { /** input used for css manipulation */}
     <input type="checkbox" className="menu-icon" name="menu-icon" />
+
     <nav>
-    <Link to={ROUTES.MOVIES} aria-label="movies page"> Movies </Link>
-    <Link to={ROUTES.SUBSCRIPTIONS} aria-label="subscriptions page"> Subscriptions </Link>
+    <Link to={ROUTES.MOVIES} aria-label="movies page">Movies</Link>
+    <Link to={ROUTES.SUBSCRIPTIONS} aria-label="subscriptions page">Subscriptions</Link>
     { permissions?.['admin'] &&
-    <Link to={ROUTES.USERS_MANGMENT} aria-label="users page"> Users Managment </Link> }
+    <Link to={ROUTES.USERS_MANGMENT} aria-label="users page">Users Managment</Link> }
     <button onClick={ handleLogout } aria-label="log out"> <Exit /> </button>
     </nav>
+    
     <label htmlFor="menu-icon" className="menu-icon" role="button" aria-label='manu icon'/>
     </header>
     )

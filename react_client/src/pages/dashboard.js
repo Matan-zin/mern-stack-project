@@ -34,7 +34,7 @@ export default function Dashboard() {
         <PermissionsContext.Provider value={ { ...permissions } }>
         <Header username={ username }/>
         <Switch>
-        <Route exact path="/" render={ () => <Welcome username={ username }/> } />
+        <Route exact path={ROUTES.DASHBOARD} render={ () => <Welcome username={ username }/> } />
         <Route path={ROUTES.MOVIES} component={ Movies } />
         <Route path={ROUTES.SUBSCRIPTIONS} component={ Subscriptions } />
         <ProtectedRoute path={ROUTES.USERS_MANGMENT} isAllow={permissions.admin} redirect={ROUTES.DASHBOARD}>
