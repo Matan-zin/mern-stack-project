@@ -24,9 +24,9 @@ export default function UsersManegment() {
         </div>
         </div>
         <Switch>
-        <Route exact path={ path }            render={() => <AllUsers url={ url } /> } />
+        <Route exact path={ path } render={() => <AllUsers url={ url } /> } />
         <Route path={ path + ROUTE.ADD_USER } render={() => <AddUser  url={ url } /> } /> 
-        <Route path={ path + ROUTE.EDIT_USER }render={() => <EditUser url={ url } /> } />
+        <Route path={ path + ROUTE.EDIT_USER } render={() => <EditUser url={ url } /> } />
         <Route component={ Notfound } />
         </Switch>
         </div>

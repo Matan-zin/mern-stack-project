@@ -33,7 +33,7 @@ beforeEach(() => { jest.clearAllMocks(); })
 
         const submit         = screen.getByRole('button', { type: /submit/i });
         const username_input = screen.getByPlaceholderText(/Enter your User Name/i);
-        const password_input = screen.getByPlaceholderText(/Enter password/i);
+        const password_input = screen.getByPlaceholderText(/Enter your Password/i);
 
         user.type(username_input, 'new-user');
         user.type(password_input, '12345');
@@ -62,7 +62,7 @@ beforeEach(() => { jest.clearAllMocks(); })
 
       const submit         = screen.getByRole('button', { type: /submit/i });
       const username_input = screen.getByPlaceholderText(/Enter your User Name/i);
-      const password_input = screen.getByPlaceholderText(/Enter password/i);
+      const password_input = screen.getByPlaceholderText(/Enter your Password/i);
       
       user.type(username_input, 'unapproved');
       user.type(password_input, '12345');
