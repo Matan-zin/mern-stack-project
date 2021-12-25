@@ -32,7 +32,7 @@ export default function Dashboard() {
     return (
         <div className="dashboard">
         <PermissionsContext.Provider value={ { ...permissions } }>
-        <Header username={ username }/>
+        <Header />
         <Switch>
         <Route exact path={ROUTES.DASHBOARD} render={ () => <Welcome username={ username }/> } />
         <Route path={ROUTES.MOVIES} component={ Movies } />
