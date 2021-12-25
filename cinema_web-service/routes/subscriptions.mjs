@@ -4,7 +4,7 @@ export const router = express.Router();
 import { COOKIE_NAME } from './auth.mjs';
 import { subscriptions as model } from '../models/subscriptions.mjs';
 
-router.use(passport.authenticate(COOKIE_NAME, { session: false }));
+// router.use(passport.authenticate(COOKIE_NAME, { session: false }));
 
 
 

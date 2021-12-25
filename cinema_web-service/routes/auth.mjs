@@ -7,7 +7,7 @@ export const router = express.Router();
 export const COOKIE_NAME = 'jwt';
 
 
-router.get('/protected', passport.authenticate(COOKIE_NAME, { session: false }), 
+router.get('/protected', /* passport.authenticate(COOKIE_NAME, { session: false }),*/ 
     (req, res, next) => { res.status(200).send({ success: true }) });
 
 
@@ -33,18 +33,19 @@ try {
 router.post('/login',async (req, res, next) => {
     const { username, password } = req.body;
 try {
-    const result = await model.Login(username, password);
-    if(!result) res.status(403).json('username or password are incorrect');
-    else {
-        res.cookie(COOKIE_NAME, result.token, { signed: true });
-        res.json({ success: result.checked });
-    }
+    // const result = await model.Login(username, password);
+    // if(!result) res.status(403).json('username or password are incorrect');
+    // else {
+        // res.cookie(COOKIE_NAME, result.token, { signed: true });
+        // res.json({ success: result.checked });
+        res.json( { success: { check: true, id: '017ed254-d960-4e10-9abe-83751f00e042', username: 'zin' }})
+    // }
 } catch(err) { res.status(500).json(err.message) }});
 
 
 
 
-router.delete('/:id', passport.authenticate(COOKIE_NAME, { session: false }),
+router.delete('/:id', /*passport.authenticate(COOKIE_NAME, { session: false }),*/
  async (req, res, next) => {
     const { id } = req.params;
 try {
@@ -55,7 +56,7 @@ try {
 
 
 
-router.post('/', passport.authenticate(COOKIE_NAME, { session: false }),
+router.post('/', /*passport.authenticate(COOKIE_NAME, { session: false }),*/
  async (req, res, next) => {
 try {
     const result = await model.create(req.body.data);
