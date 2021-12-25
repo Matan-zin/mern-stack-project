@@ -11,6 +11,9 @@ const mock_history_push = jest.fn();
 jest.mock('../services/services');
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
+    useLocation: () => ({
+      pathname: '/'
+    }),
     useHistory: () => ({
       push: mock_history_push
     })
@@ -30,7 +33,7 @@ describe('<Header />', () => {
             </BrowserRouter>
         )
 
-        expect(screen.getByText(/zin/i)).toBeInTheDocument();
+        expect(screen.getByText(/Home/i)).toBeInTheDocument();
         expect(screen.getByText(/Movies/i)).toBeInTheDocument();
         expect(screen.getByText(/Subscriptions/i)).toBeInTheDocument();
         expect(screen.getByText(/Users Managment/i)).toBeInTheDocument();

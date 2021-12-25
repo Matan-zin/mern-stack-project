@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import { logout } from "../services/services";
 import * as ROUTES from '../constants/routes';
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import PermissionsContext from "../context/permissions";
 
 import '../styles/header.css';
 import Exit from '../assets/Exit.js';
 
-export default function Header({ username }) {
+export default function Header() {
     
     const history = useHistory();
+    const { pathname } = useLocation();
+    // extract current tab position   
+    const location = '/' + pathname.split('/')[1]; 
     const permissions = useContext(PermissionsContext);
 
     const handleLogout = (e) => {
@@ -18,23 +21,39 @@ export default function Header({ username }) {
         history.push(ROUTES.LOGIN);
     };
 
+    const currentTab = {
+        'borderTop': 'unset',
+        'borderBottom': 'unset',
+    }
+
     return (
     <header>
     <Link to={ROUTES.DASHBOARD}>
         <span className="logo">CINEMA<span>ADMIN</span></span>
     </Link>
-    <span className="user-name">{username}</span>
-    { /** input used for css manipulation */}
+    { /** input used here for css manipulation */}
     <input type="checkbox" className="menu-icon" name="menu-icon" />
-
     <nav>
-    <Link to={ROUTES.MOVIES} aria-label="movies page">Movies</Link>
-    <Link to={ROUTES.SUBSCRIPTIONS} aria-label="subscriptions page">Subscriptions</Link>
+    <Link 
+        to={ROUTES.DASHBOARD}
+        style={location === ROUTES.DASHBOARD ? currentTab : undefined}
+        aria-label="home page">Home</Link>
+    <Link
+        to={ROUTES.MOVIES}
+        style={location === ROUTES.MOVIES ? currentTab : undefined}
+        aria-label="movies page">Movies</Link>
+    <Link
+        to={ROUTES.SUBSCRIPTIONS}
+        style={location === ROUTES.SUBSCRIPTIONS ? currentTab : undefined}
+        aria-label="subscriptions page">Subscriptions</Link>
     { permissions?.['admin'] &&
-    <Link to={ROUTES.USERS_MANGMENT} aria-label="users page">Users Managment</Link> }
+    <Link
+        to={ROUTES.USERS_MANGMENT} 
+        style={location === ROUTES.USERS_MANGMENT ? currentTab : undefined}
+        aria-label="users page">Users Managment</Link> 
+    }
     <button onClick={ handleLogout } aria-label="log out"> <Exit /> </button>
     </nav>
-    
     <label htmlFor="menu-icon" className="menu-icon" role="button" aria-label='manu icon'/>
     </header>
     )
