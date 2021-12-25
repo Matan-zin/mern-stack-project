@@ -42,7 +42,7 @@ export default function MemberForm({
             value={member.city}
             placeholder="Enter city"
             onChange={({ target }) => handleChange(target)} />
-        <div className="member-btns">
+        <div className="inner-btns member-btns">
         <button
             type="submit">{btnName}</button>
         <button

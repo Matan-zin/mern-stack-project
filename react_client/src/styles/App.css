@@ -17,20 +17,25 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -9999;
-  font-family: 'Tauri', sans-serif;
   color: var(--color-2b);
+  font-family: 'Tauri', sans-serif;
   background-color: var(--color-1w);
 }
 
 button {
   all: unset;
   cursor: pointer;
-  padding: .1em 1.5em;
-  border-radius: 8px;
+  text-align: center;
   color: var(--color-1w);
   background-color: var(--color-2b);
 }
 
+button:hover {
+  background-color: rgb(56, 56, 56);
+}
+button:active {
+  background-color: rgb(85, 85, 85);
+}
 /**
 * General properties for all pages
 */
@@ -51,9 +56,10 @@ button {
   flex-direction: column;
 }
 
-.head-btns-wrapper button:hover,
-.head-btns-wrapper button:active {
-  border-radius: 8px;
+.head h1 {
+  margin: 10px 0;
+  padding-bottom: 8px;
+  border-bottom: .5px solid var(--color-2b);
 }
 
 .head-btns-wrapper {
@@ -64,10 +70,12 @@ button {
 }
 
 .head-btns-wrapper button {
-  padding: .4em;
+  padding: 8px 0;
+  width: 160px;
   margin-left: 10px;
-  border-radius: unset;
+  text-align: center;
   font-weight: bolder;
+  border-radius: unset;
 }
 
 [class*="card"],
@@ -78,6 +86,7 @@ button {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-2b);
+  box-shadow: .5px .5px 8px -2px black;
 }
 
 [class*="form"] input[type="text"],
@@ -88,15 +97,27 @@ button {
     margin-bottom: 8px;
 }
 
+
+[class*="card"]:hover,
+[class*="card"]:active,
+[class*="form"]:hover,
+[class*="form"]:active {
+  box-shadow: unset;
+}
+
 [class*="card"] ul {
   list-style: none;
 }
 
 /* Form and card buttons */
-[class*="btns"] {
-  margin: .8em .5em .2em 0em;
+.inner-btns {
+  height: 20px;
+  margin: 6px 0;
 }
-[class*="btns"] button {
+
+.inner-btns button {
+  width: 80px;
+  height: 26px;
   margin-right: .6em;
 }
 

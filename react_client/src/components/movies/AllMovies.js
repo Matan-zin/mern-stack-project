@@ -48,18 +48,20 @@ export default function AllMovies({ url, isDeleteVisible }) {
         <>
         { !movieList ? ( <Skeleton count={4} /> ) : (
         <>
+        <div className="search-wrapper">
         <label htmlFor="search-movie">Search Movie:</label>
         <input
              name="search-movie"
              type="text"
              onChange={({ target }) => setSearch(target.value)} />
+        </div>
         <div className="list">
         { movieList.map((movie, index) => {
             return (
-                <div className="movie-card" key={index}>
-                <section id={movie._id} aria-label="movie details">
-                <h4>{movie.name} ,<time date={movie.premiered}>{movie.premiered.substring(0,4)}</time></h4>
-                <p>genres: 
+                <div className="card movie-card" key={index} id={movie._id} aria-label="movie details">
+                <h3>{movie.name} ,<time date={movie.premiered}>{movie.premiered.substring(0,4)}</time></h3>
+                <p>Genres:</p>
+                <p>
                 { movie.genres.map((genre, index) => {
                       return <span key={index}>{` `}{genre}</span>
                   })}
@@ -67,7 +69,7 @@ export default function AllMovies({ url, isDeleteVisible }) {
                 <img src={movie.image} alt={movie.name} />
                 <SubsricptionWatched _id={movie._id} />
 
-                <div className="movie-btns">
+                <div className="inner-btns movie-btns">
                 <button
                     type="button"
                     onClick={() => storeId(movie._id)}>Edit</button>
@@ -78,7 +80,6 @@ export default function AllMovies({ url, isDeleteVisible }) {
                     onClick={() => handleDelete(movie._id)}>Delete</button>
                 }
                 </div>
-                </section>
                 </div>
             )    
           })

@@ -35,7 +35,7 @@ export default function Subscribe({
         })}
         </select>
         <input type="date" onChange={({ target }) => setDate(target.value)} />
-        <button type="submit">Subscribe</button>
+        <button className="sub-iner-btn" type="submit">Subscribe</button>
         </form>
     )
 }
