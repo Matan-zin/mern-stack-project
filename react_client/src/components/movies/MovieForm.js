@@ -53,7 +53,7 @@ export default function MovieForm({
             type="date"
             value={tmpMovie.premiered}
             onChange={({ target }) => handleChange(target)} />
-        <div className="movie-btns">
+        <div className="inner-btns movie-btns">
         <button type="submit">{btnName}</button>
         <button 
             type="button"

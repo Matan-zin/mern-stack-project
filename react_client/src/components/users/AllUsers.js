@@ -47,7 +47,7 @@ export default function AllUsers({ url }) {
                   key !== 'id' && value !== 'false' && <li key={index}>{key}:<span>{value}</span></li>
               ))}
               </ul>
-              <div className="user-btns">
+              <div className="inner-btns user-btns">
               <button type="button" onClick={() => storeId(detail.id)}>      Edit   </button>
               <button type="button" onClick={() => handleDelete(detail.id)}> Delete </button>
               </div>

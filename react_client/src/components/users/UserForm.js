@@ -47,7 +47,7 @@ export default function UserForm({
         <UserPermissions 
                  permissions={permissions}
                  handleChange={handle_permissions_changed} />
-        <div className="user-btns">
+        <div className="inner-btns user-btns">
         <button type="submit">{btnName}</button>
         <button type="button" onClick={() => history.push(url)}> Cancel </button>
         </div>

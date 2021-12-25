@@ -50,7 +50,7 @@ export default function AllMembers({ url , isDeleteVisible}) {
                 <p>Email: {member.email}</p>
                 <p>City:  {member.city}</p>
 
-                <div className="member-btns">
+                <div className="inner-btns member-btns">
                 <button
                     type="button"
                     onClick={() => handleEdit(member._id)}>Edit</button>

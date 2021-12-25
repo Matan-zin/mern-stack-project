@@ -34,6 +34,7 @@ export default function MovieWatched({ _id, movies }) {
         <>
         <h4>Movies Watched:</h4>
         <button
+            className="sub-btn"
             type="button"
             onClick={() => setExpend(!expend)}> Subscribe to new movie </button>
         <>
