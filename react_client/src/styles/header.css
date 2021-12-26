@@ -91,6 +91,10 @@ nav {
     background-color: rgb(194, 194, 194);
   }
 
+  nav button:hover,
+  nav button:active {
+    background-color: unset;
+  }
   .menu-icon {
     all: unset;
     width: 26px;
