@@ -51,6 +51,7 @@ button:active {
 
 .head {
   margin: .6em;
+  width: 330px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -63,19 +64,23 @@ button:active {
 }
 
 .head-btns-wrapper {
+  width: 330px;
   margin: 20px 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content:space-between;
 }
 
 .head-btns-wrapper button {
   padding: 8px 0;
   width: 160px;
-  margin-left: 10px;
   text-align: center;
   font-weight: bolder;
   border-radius: unset;
+}
+
+[class*="form"] input{
+  text-indent: 5px;
 }
 
 [class*="card"],
@@ -111,14 +116,13 @@ button:active {
 
 /* Form and card buttons */
 .inner-btns {
-  height: 20px;
-  margin: 6px 0;
+  height: 30px;
 }
 
 .inner-btns button {
   width: 80px;
   height: 26px;
-  margin-right: .6em;
+  margin: 4px 8px 0 0;
 }
 
 @media(min-width: 800px) and (max-width: 9999px) {
