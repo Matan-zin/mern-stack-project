@@ -22,8 +22,7 @@ export default function Header() {
     };
 
     const currentTab = {
-        'borderTop': 'unset',
-        'borderBottom': 'unset',
+        backgroundColor: 'rgb(81,81,81)',
     }
 
     return (
