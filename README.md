@@ -34,7 +34,7 @@ $ cd docker-compose && sudo docker-compose up --build
 # navigate to localhost on your browser
 ```
 
----
+
 
 ## App Design:
  
