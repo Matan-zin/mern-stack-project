@@ -18,8 +18,9 @@ password: `12345` <br/>
 
 #### Installation:
 
-To run this app on local environment switch and clone
-the development branch and run the commands below:
+To run this app on local environment switch to
+the development branch and clone the repo after that 
+run the commands below:
 
 ```bash
 # verify docker.socket are active
